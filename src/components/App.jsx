@@ -10,7 +10,7 @@ export class App extends Component {
     good: 0,
     neutral: 0,
     bad: 0,
-    isOpen: false,
+    isOpen: false
   };
 
   onLeaveFeedback = (name) => {
@@ -37,7 +37,7 @@ export class App extends Component {
 
   addStatisctic = () => {
     this.setState({
-      isOpen: true,
+      isOpen: true
     })
   }
 
@@ -51,7 +51,7 @@ export class App extends Component {
       <Section title={'Please leave feedback'}
         children={<FeedbackOptions
           onLeaveFeedback={this.onLeaveFeedback}
-          options={Object.keys(this.state)}
+          options={Object.keys(this.state).slice(0,3)}
         />}
       />
       

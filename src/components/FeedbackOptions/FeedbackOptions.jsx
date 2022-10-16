@@ -3,9 +3,11 @@ import { List, Item, Button } from 'components/FeedbackOptions/FeedbackOptions.s
 
 export const FeedbackOptions = ({ onLeaveFeedback, options}) => {
     return <List>
-        <Item><Button onClick={onLeaveFeedback}>{options[0]}</Button></Item>
-        <Item><Button onClick={onLeaveFeedback}>{options[1]}</Button></Item>
-        <Item><Button onClick={onLeaveFeedback}>{options[2]}</Button></Item>
+        {options.map(option => {
+            return (<Item key={options.indexOf(option)}>
+                <Button onClick={onLeaveFeedback}>{option}</Button>
+            </Item>)
+        })}
     </List>;
 };
 
